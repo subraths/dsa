@@ -13,8 +13,12 @@ class LongestRepeatingCharacter {
    * The idea is to check if a window is valid if it is not valid move left pointer one step and
    * remove the corresponding char at left pointer then max of local window length and global res
    *
-   * <p>check a window is valid windowLength - mostFreq <= k ==> valid; windowLength - mostFreq > k
-   * ==> invalid;
+   * <p>also we dont need to loop over map to find the mostFreq value, we can use a constant to
+   * define maxFrequent value. if there is new max it will be replaced automatically; any other
+   * value less than maxFrequent is not needed anyway
+   *
+   * <p>to check a window is valid windowLength - mostFreq <= k ==> valid; windowLength - mostFreq >
+   * k ==> invalid;
    */
   public int repeated(String s, int k) {
     Map<Character, Integer> map = new HashMap<>();
